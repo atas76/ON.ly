@@ -1,0 +1,61 @@
+{
+	type:match,
+	homeTeam:{name:Real Madrid,
+		{type:lineup,
+			{tacticsLine:GK, {playerName:Casillas}},
+			{tacticsLine:D, 
+				{playerName:Sergio Ramos},
+				{playerName:Pepe},
+				{playerName:Marcelo},
+				{playerName:Daniel Carvajal}
+			},
+			{tacticsLine:M,
+				{playerName:Modric, duration:0.99},
+				{playerName:Kroos},
+				{playerName:Rodriguez},
+				{playerName:Isco, duration:0.93}
+			},
+			{tacticsLine:F,
+				{playerName:Ronaldo},
+				{playerName:Benzema, duration:0.97}
+			}
+		},
+		{type:sub,
+			{playerName:Illaramendi, duration:0.07},
+			{playerName:Khedira, duration:0.03},
+			{playerName:Arbeloa, duration:0.01}
+		}
+	},
+	awayTeam:{name:Barcelona,
+		{type:lineup,
+			{tacticsLine:GK, {playerName:Bravo}},
+			{tacticsLine:D, 
+				{playerName:Mathieu},
+				{playerName:Dani Alves},
+				{playerName:Pique},
+				{playerName:Mascherano}
+			},
+			{tacticsLine:M,
+				{playerName:Iniesta, duration:0.8},
+				{playerName:Busquets},
+				{playerName:Xavi, duration:0.67}
+			},
+			{tacticsLine:F,
+				{playerName:Suarez, duration:0.77},
+				{playerName:Messi},
+				{playerName:Neymar}
+			}	
+		},
+		{type:sub,
+			{playerName:Rakitic, duration:0.33},
+			{playerName:Pedro, duration:0.23},
+			{playerName:Sergi Roberto, duration:0.2}
+		}
+	},
+	homeScore:3,
+	awayScore:1,
+	date:25-10-2014
+}
+			
+			
+	
