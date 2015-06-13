@@ -1,61 +1,114 @@
 {
 	type:match,
 	homeTeam:{name:Real Madrid,
-		{type:lineup,
-			{tacticsLine:GK, {playerName:Casillas}},
-			{tacticsLine:D, 
+		lineup:{
+			GK:{playerName:Casillas},
+			Defenders:[ 
 				{playerName:Sergio Ramos},
 				{playerName:Pepe},
 				{playerName:Marcelo},
 				{playerName:Daniel Carvajal}
-			},
-			{tacticsLine:M,
+			],
+			Midfielders:[
 				{playerName:Modric, duration:0.99},
 				{playerName:Kroos},
 				{playerName:Rodriguez},
 				{playerName:Isco, duration:0.93}
-			},
-			{tacticsLine:F,
+			],
+			Forwards:[
 				{playerName:Ronaldo},
 				{playerName:Benzema, duration:0.97}
-			}
+			]
 		},
-		{type:sub,
+		substitutes:[
 			{playerName:Illaramendi, duration:0.07},
 			{playerName:Khedira, duration:0.03},
 			{playerName:Arbeloa, duration:0.01}
-		}
+		]
 	},
 	awayTeam:{name:Barcelona,
-		{type:lineup,
-			{tacticsLine:GK, {playerName:Bravo}},
-			{tacticsLine:D, 
+		lineup:{
+			GK:{playerName:Bravo},
+			Defenders:[ 
 				{playerName:Mathieu},
 				{playerName:Dani Alves},
 				{playerName:Pique},
 				{playerName:Mascherano}
-			},
-			{tacticsLine:M,
+			],
+			Midfielders:[
 				{playerName:Iniesta, duration:0.8},
 				{playerName:Busquets},
 				{playerName:Xavi, duration:0.67}
-			},
-			{tacticsLine:F,
+			],
+			Forwards:[
 				{playerName:Suarez, duration:0.77},
 				{playerName:Messi},
 				{playerName:Neymar}
-			}	
+			]	
 		},
-		{type:sub,
+		substitutes:[
 			{playerName:Rakitic, duration:0.33},
 			{playerName:Pedro, duration:0.23},
 			{playerName:Sergi Roberto, duration:0.2}
-		}
+		]
 	},
 	homeScore:3,
 	awayScore:1,
-	date:25-10-2014
-}
-			
-			
-	
+	date:25-10-2014}
+{
+	type:match,
+	homeTeam:{name:Real Madrid,
+		lineup:{
+			GK:{playerName:Casillas},
+			Defenders:[ 
+				{playerName:Nacho},
+				{playerName:Pepe},
+				{playerName:Sergio Ramos, duration:0.73},
+				{playerName:Marcelo}
+			],
+			Midfielders:[
+				{playerName:Modric, duration:0.82},
+				{playerName:Kroos},
+				{playerName:Rodriguez}
+			],
+			Forwards:[
+				{playerName:Bale},
+				{playerName:Benzema, duration:0.91},
+				{playerName:Ronaldo}
+			]
+		},
+		substitutes:[
+			{playerName:Varane, duration:0.27},
+			{playerName:Illaramendi, duration:0.18},
+			{playerName:Hernandez, duration:0.09}
+		]
+	},
+	awayTeam:{name:Basel,
+		lineup:{
+			GK:{playerName:Vaclik},
+			Defenders:[ 
+				{playerName:Schar},
+				{playerName:Samuel, duration:0.71},
+				{playerName:Suchy}
+			],
+			Midfielders:[
+				{playerName:Xhaka},
+				{playerName:Mohamed El Nenny},
+				{playerName:Frei, duration:0.92},
+				{playerName:Safari},
+				{playerName:Gonzalez},
+				{playerName:Zuffi}
+			],
+			Forwards:[
+				{playerName:Streller, duration:0.81}
+			]	
+		},
+		substitutes:[
+			{playerName:Kakitani, duration:0.29},
+			{playerName:Embolo, duration:0.19},
+			{playerName:Delgado, duration:0.08}
+		]
+	},
+	homeScore:5,
+	awayScore:1,
+	date:16-09-2014}
