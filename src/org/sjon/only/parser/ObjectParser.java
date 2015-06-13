@@ -110,7 +110,7 @@ public class ObjectParser {
 			/**
 			 * TODO: DEBUG
 			 */
-			System.out.println("Current value: " + tokenValues.get(currentIndex));
+			// System.out.println("Current value: " + tokenValues.get(currentIndex));
 			return tokenValues.get(currentIndex++);
 		}
 		
