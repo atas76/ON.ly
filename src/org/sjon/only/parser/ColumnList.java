@@ -14,4 +14,9 @@ public class ColumnList extends ColumnGroup {
 	public Object getValue(int index) {
 		return this.columnValues.get(index);
 	}
+	
+	public List<Object> getValues() {
+		return this.columnValues;
+	}
+	
 }
