@@ -20,6 +20,8 @@ public class ObjectParser {
 	
 	private int currentIndex = 0;
 	
+	private int currentRecord = 0; // Used for debugging
+	
 	public ObjectParser(ObjectAnalyzer analyzer) {
 		this.analyzer = analyzer;
 	}
@@ -28,12 +30,17 @@ public class ObjectParser {
 		return this.document;
 	}
 	
+	public int getCurrentRecord() {
+		return this.currentRecord;
+	}
+	
 	public void parse() throws IllegalColumnGroupStartException, LookaheadException {
 		
 		this.tokens = analyzer.getTokens();
 		this.tokenValues = analyzer.getTokenValues();
 		
 		while (currentIndex < tokens.size()) {
+			this.currentRecord++;
 			this.document.add(getNextColumnGroup());
 		}
 	}
@@ -127,7 +134,7 @@ public class ObjectParser {
 		/**
 		 * TODO: DEBUG
 		 */
-		System.out.println("Current column: (" + currentColumnKey + ", " + currentColumnValue + ")");
+		// System.out.println("Current column: (" + currentColumnKey + ", " + currentColumnValue + ")");
 		
 		return new Column(currentColumnKey, currentColumnValue);
 	}
@@ -142,7 +149,7 @@ public class ObjectParser {
 			// System.out.println("Current token: " + tokens.get(currentIndex));
 			// System.out.println("Current token value: " + tokenValues.get(currentIndex));
 			
-			throw new LookaheadException(token);
+			throw new LookaheadException(token, this.currentRecord);
 		}
 		
 		currentIndex++;

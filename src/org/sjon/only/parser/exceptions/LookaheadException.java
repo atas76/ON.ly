@@ -4,7 +4,7 @@ import org.sjon.only.scanner.Token;
 
 public class LookaheadException extends Exception {
 	
-	public LookaheadException(Token token) {
-		super(token.toString());
+	public LookaheadException(Token token, int currentRecord) {
+		super(token.toString() + " Current record: " + currentRecord);
 	}
 }

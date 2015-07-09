@@ -74,6 +74,41 @@ public class ObjectParserTest {
 	*/
 	
 	@Test
+	public void throwawayTest() throws Exception {
+		
+		File dataFile = new File(Resources.THROWAWAY_DATA);
+		
+		BufferedReader br = new BufferedReader(new FileReader(dataFile));
+		
+	    try {
+	    	
+	        StringBuilder sb = new StringBuilder();
+	        String line = br.readLine();
+
+	        while (line != null) {
+	            sb.append(line);
+	            sb.append(System.lineSeparator());
+	            line = br.readLine();
+	        }
+	        
+	        this.analyzer = new ObjectAnalyzer(sb.toString());
+	        
+	        analyzer.analyze();
+			this.parser = new ObjectParser(this.analyzer);
+			
+			this.parser.parse();
+			
+			List<ColumnGroup> document = this.parser.getDocument();
+	        
+	    } catch(Exception ex) {
+	    	// System.out.println("Current record: " + this.parser.getCurrentRecord());
+	    	ex.printStackTrace();
+	    } finally {
+	        br.close();
+	    }
+	}
+	
+	@Test
 	public void testParse() throws Exception {
 		
 		analyzer.analyze();
