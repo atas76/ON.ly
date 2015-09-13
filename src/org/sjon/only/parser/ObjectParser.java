@@ -53,6 +53,7 @@ public class ObjectParser {
 			case BLOCK_START:
 				currentIndex++;
 				columnGroup = new ColumnMap(getNextColumnCommalist());
+				// System.out.println("Current token: " + tokens.get(currentIndex));
 				lookahead(Token.BLOCK_END);
 				break;
 			case LIST_START:

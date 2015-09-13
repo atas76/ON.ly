@@ -1,7 +1,12 @@
 package org.sjon.only.scanner;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.sjon.only.scanner.exceptions.EmptyObjectException;
 
 public class ObjectAnalyzer {
 	
@@ -12,12 +17,34 @@ public class ObjectAnalyzer {
 	private final char COMMA = ',';
 	private final char KEY_VALUE_SEPARATOR = ':';
 	
-	private String line;
+	private String text;
 	private List<Token> tokens = new ArrayList<Token>();
 	private List<String> tokenValues = new ArrayList<String>();
 	
-	public ObjectAnalyzer(String line) {
-		this.line = line;
+	public ObjectAnalyzer(File file) {
+		
+		try {
+		
+			BufferedReader br = new BufferedReader(new FileReader(file));
+		
+	        StringBuilder sb = new StringBuilder();
+	        String line = br.readLine();
+
+	        while (line != null) {
+	            sb.append(line);
+	            sb.append(System.lineSeparator());
+	            line = br.readLine();
+	        }
+	        
+	        this.text = sb.toString();
+	        
+	    } catch (Exception ex) {
+	    	this.text = null;
+	    }
+	}
+	
+	public ObjectAnalyzer(String text) {
+		this.text = text;
 	}
 	
 	public List<Token> getTokens() {
@@ -33,10 +60,14 @@ public class ObjectAnalyzer {
 	/**
 	 * Scans each input character
 	 */
-	public void analyze() {
+	public void analyze() throws EmptyObjectException {
 		
-		lineChars = new char[this.line.length()]; 
-		this.line.getChars(0, this.line.length(), lineChars, 0);
+		if (this.text == null) {
+			throw new EmptyObjectException();
+		}
+		
+		lineChars = new char[this.text.length()]; 
+		this.text.getChars(0, this.text.length(), lineChars, 0);
 		
 		int currentIndex = 0;
 		
